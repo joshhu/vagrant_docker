@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # 建立虛擬機之後，在虛擬機中執行的程式
 
   config.vm.provision "shell", path: "installdocker.sh"
-  config.ssh.insert_key = false
+  config.ssh.insert_key = true
 
   config.vm.provider :virtualbox do |vb|
     vb.memory = 4096
