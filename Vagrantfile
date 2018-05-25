@@ -21,13 +21,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :docker01 do |docker01|
     docker01.vm.provision "shell", inline: "locale-gen zh_TW.UTF-8"
+    docker01.vm.network :private_network, ip: "192.168.14.101"
   end
 
   config.vm.define :docker02 do |docker02|
     docker02.vm.provision "shell", inline: "locale-gen zh_TW.UTF-8"
+    docker02.vm.network :private_network, ip: "192.168.14.102"
   end
 
   config.vm.define :docker03 do |docker03|
     docker03.vm.provision "shell", inline: "locale-gen zh_TW.UTF-8"
+    docker03.vm.network :private_network, ip: "192.168.14.103"
   end
 end
